@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Consent Mode v2: padrão "negado" antes de qualquer tag de medição -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WCWC7J6H');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mábia Matos e Advogados Associados — Advocacia Criminal</title>
@@ -13,12 +34,12 @@
 <meta property="og:title" content="Mábia Matos e Advogados Associados — Advocacia Criminal">
 <meta property="og:description" content="Escritório de advocacia criminal em Joinville/SC, com atuação em todo o território nacional. Atuação técnica e discreta em todas as fases do processo criminal.">
 <meta property="og:url" content="https://mabiamatos.adv.br/">
-<meta property="og:image" content="https://mabiamatos.adv.br/assets/img/mabia-matos-sobre.jpg">
+<meta property="og:image" content="https://mabiamatos.adv.br/ativos/imagem/mabia-matos-sobre.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mábia Matos e Advogados Associados — Advocacia Criminal">
 <meta name="twitter:description" content="Escritório de advocacia criminal em Joinville/SC, com atuação em todo o território nacional. Atuação técnica e discreta em todas as fases do processo criminal.">
-<meta name="twitter:image" content="https://mabiamatos.adv.br/assets/img/mabia-matos-sobre.jpg">
+<meta name="twitter:image" content="https://mabiamatos.adv.br/ativos/imagem/mabia-matos-sobre.jpg">
 
 <script type="application/ld+json">
 {
@@ -27,9 +48,11 @@
   "name": "Mábia Matos e Advogados Associados",
   "description": "Escritório de advocacia criminal em Joinville/SC, com atuação em todo o território nacional.",
   "url": "https://mabiamatos.adv.br/",
-  "image": "https://mabiamatos.adv.br/assets/img/mabia-matos-sobre.jpg",
+  "logo": "https://mabiamatos.adv.br/ativos/imagem/logo-mabia-matos.png",
+  "image": "https://mabiamatos.adv.br/ativos/imagem/mabia-matos-sobre.jpg",
   "telephone": "+5547999436619",
   "email": "mabiamatos.adv@gmail.com",
+  "taxID": "57.469.433/0001-08",
   "priceRange": "$$",
   "areaServed": "BR",
   "address": {
@@ -114,12 +137,18 @@
   .btn-ghost-light{ border-color: var(--ink); color: var(--ink); }
   .btn-ghost-light:hover{ background: var(--ink); color: var(--cream-50); transform: translateY(-2px); }
 
+  /* ===== MARCA (texto, enquanto a logo não é enviada) ===== */
+  .brand{ display:flex; align-items:center; gap:.65rem; font-family: var(--font-display); font-size:1.1rem; font-weight:560; color: var(--cream-50); }
+  .brand small{ display:block; font-family: var(--font-mono); font-size:.6rem; letter-spacing:.14em; color: var(--sage); font-weight:400; margin-top:.15rem; }
+  .footer-brand{ font-family: var(--font-display); font-size:1.15rem; color: var(--cream-50); margin-bottom:.8rem; }
+
+  /* ===== LOGO (ativar quando o arquivo for enviado) ===== */
+  .brand-logo{ height:52px; width:auto; background:var(--cream-50); padding:.3rem .6rem; border-radius:var(--radius); display:block; }
+
   /* ===== NAV ===== */
   .nav{ position:fixed; inset:0 0 auto 0; z-index:100; padding-block:1.1rem; transition: background .3s var(--ease), padding .3s var(--ease), box-shadow .3s var(--ease); }
   .nav.is-scrolled{ background: rgba(42,47,37,.94); backdrop-filter: blur(10px); padding-block:.75rem; box-shadow: 0 8px 30px rgba(0,0,0,.16); }
   .nav .container{ display:flex; align-items:center; justify-content:space-between; gap:1.5rem; }
-  .brand{ display:flex; align-items:center; gap:.65rem; font-family: var(--font-display); font-size:1.1rem; font-weight:560; color: var(--cream-50); }
-  .brand small{ display:block; font-family: var(--font-mono); font-size:.6rem; letter-spacing:.14em; color: var(--sage); font-weight:400; margin-top:.15rem; }
   .nav-links{ display:flex; align-items:center; gap:2.1rem; }
   .nav-links a:not(.btn){ font-size:.92rem; color: var(--sage-light); position:relative; padding-block:.25rem; }
   .nav-links a:not(.btn)::after{ content:''; position:absolute; left:0; right:100%; bottom:0; height:1px; background: var(--terracotta-light); transition: right .25s var(--ease); }
@@ -175,7 +204,7 @@
   .about-cred div{ font-family: var(--font-mono); font-size:.78rem; color: var(--brick); max-width:24ch; }
   .about-cred strong{ display:block; font-family: var(--font-display); font-size:1.1rem; color: var(--ink); font-weight:560; margin-bottom:.2rem; }
 
-  /* ===== ÁREAS DE ATUAÇÃO (estilo com filete, como no site de referência) ===== */
+  /* ===== ÁREAS DE ATUAÇÃO ===== */
   .areas-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 2.4rem 2.2rem; }
   .area-item .rule{ width:44px; height:2px; background: var(--terracotta); margin-block:.9rem 1rem; }
   .area-item h3{ font-size:1.12rem; color: var(--cream-50); font-weight:560; }
@@ -213,7 +242,6 @@
   /* ===== FOOTER ===== */
   .site-footer{ background: var(--olive-900); color: var(--sage-light); padding-block: var(--sp-6) var(--sp-4); }
   .footer-grid{ display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--sp-5); padding-bottom: var(--sp-5); border-bottom:1px solid rgba(245,241,234,.1); }
-  .footer-brand{ font-family: var(--font-display); font-size:1.15rem; color: var(--cream-50); margin-bottom:.8rem; }
   .footer-grid p{ font-size:.88rem; max-width:34ch; }
   .footer-col h4{ font-family: var(--font-mono); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color: var(--taupe); margin-bottom:1rem; }
   .footer-col li{ margin-bottom:.65rem; font-size:.9rem; }
@@ -222,8 +250,25 @@
   .footer-social a{ width:36px; height:36px; border:1px solid rgba(245,241,234,.25); border-radius:50%; display:flex; align-items:center; justify-content:center; transition: border-color .25s var(--ease), background .25s var(--ease); }
   .footer-social a:hover{ border-color: var(--terracotta-light); background: rgba(177,108,69,.12); }
   .footer-social svg{ width:15px; height:15px; }
+  .follow{ margin-top:1rem; font-size:.9rem; }
+  .follow a{ color: var(--terracotta-light); text-decoration: underline; text-underline-offset: 3px; }
   .footer-bottom{ padding-top: var(--sp-4); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; font-size:.78rem; color: var(--taupe-dark); }
+  .footer-bottom a{ color: var(--taupe); text-decoration: underline; text-underline-offset: 3px; }
+  .footer-bottom a:hover{ color: var(--terracotta-light); }
+  .footer-cookie-btn{ font: inherit; font-size:.78rem; color: var(--taupe); text-decoration: underline; text-underline-offset: 3px; background: none; border: none; cursor: pointer; padding: 0; }
+  .footer-cookie-btn:hover{ color: var(--terracotta-light); }
   .footer-disclaimer{ max-width:70ch; margin-top:.6rem; line-height:1.6; }
+
+  /* ===== BANNER DE COOKIES ===== */
+  .cookie-banner{ position:fixed; left:1rem; right:1rem; bottom:1rem; max-width:720px; margin-inline:auto; z-index:150;
+    background: var(--olive-900); color: var(--cream-50); border-radius: var(--radius); padding: 1.3rem 1.5rem;
+    box-shadow: 0 18px 50px rgba(0,0,0,.35); display:none; gap:1.2rem; align-items:center; flex-wrap:wrap; }
+  .cookie-banner.is-visible{ display:flex; }
+  .cookie-banner p{ flex:1 1 320px; font-size:.9rem; color: var(--sage-light); line-height:1.55; }
+  .cookie-banner p a{ color: var(--terracotta-light); text-decoration: underline; text-underline-offset: 3px; }
+  .cookie-actions{ display:flex; gap:.7rem; flex-wrap:wrap; }
+  .cookie-actions .btn{ padding:.7rem 1.1rem; font-size:.88rem; }
+  .cookie-banner .btn-ghost-dark{ border-color: rgba(245,241,234,.35); }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width:900px){
@@ -244,10 +289,12 @@
     .nav-toggle.is-open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
     .footer-grid{ grid-template-columns:1fr; }
     .footer-bottom{ flex-direction:column; }
+    .brand-logo{ height:44px; }
   }
   @media (max-width:560px){
     .hero-actions .btn{ width:100%; }
     .cta-actions{ width:100%; } .cta-actions .btn{ width:100%; }
+    .cookie-actions{ width:100%; } .cookie-actions .btn{ flex:1 1 auto; }
   }
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
@@ -256,17 +303,17 @@
 </head>
 <body>
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCWC7J6H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <a href="#inicio" class="skip-link">Pular para o conteúdo</a>
 
 <!-- ===== NAV ===== -->
 <header class="nav" id="siteNav">
   <div class="container">
     <a href="#inicio" class="brand">
-      <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="17" stroke="#A2AC93" stroke-width="1.1" opacity=".55"/>
-        <circle cx="20" cy="20" r="11.5" stroke="#B16C45" stroke-width="1.1" opacity=".75"/>
-        <circle cx="20" cy="20" r="5.5" stroke="#F5F1EA" stroke-width="1.1"/>
-      </svg>
       <span>Mábia Matos Advogados<small>ADVOCACIA CRIMINAL</small></span>
     </a>
     <nav class="nav-links" id="navLinks">
@@ -334,7 +381,7 @@
       </div>
     </div>
     <div class="about-panel reveal">
-      <img src="assets/img/mabia-matos-sobre.jpg" alt="Dra. Mábia Matos, advogada criminalista" width="760" height="1015" loading="eager">
+      <img src="ativos/imagem/mabia-matos-sobre.jpg" alt="Dra. Mábia Matos, advogada criminalista" width="760" height="1015" loading="eager">
     </div>
   </div>
 </section>
@@ -406,7 +453,7 @@
     <div class="team-grid">
       <div class="team-card reveal">
         <div class="team-badge">
-          <img src="assets/img/mabia-matos-equipe.jpg" alt="Dra. Mábia Matos" width="360" height="360" loading="lazy">
+          <img src="ativos/imagem/mabia-matos-equipe.jpg" alt="Dra. Mábia Matos" width="360" height="360" loading="lazy">
         </div>
         <h3>Dr(a). Mábia Matos</h3>
         <div class="role">Advogada · OAB/BA 63.080 · OAB/SC 72.937</div>
@@ -414,7 +461,7 @@
       </div>
       <div class="team-card reveal">
         <div class="team-badge">
-          <img src="assets/img/julyanne-cerqueira-cardoso.jpg" alt="Julyanne de Cerqueira Cardoso" width="360" height="360" loading="lazy">
+          <img src="ativos/imagem/julyanne-cerqueira-cardoso.jpg" alt="Julyanne de Cerqueira Cardoso" width="360" height="360" loading="lazy">
         </div>
         <h3>Julyanne de Cerqueira Cardoso</h3>
         <div class="role">Estagiária de Direito · OAB/BA 34.033-E</div>
@@ -422,7 +469,7 @@
       </div>
       <div class="team-card reveal">
         <div class="team-badge">
-          <img src="assets/img/herbert-dos-santos-silva.jpg" alt="Herbert dos Santos Silva" width="360" height="360" loading="lazy">
+          <img src="ativos/imagem/herbert-dos-santos-silva.jpg" alt="Herbert dos Santos Silva" width="360" height="360" loading="lazy">
         </div>
         <h3>Herbert dos Santos Silva</h3>
         <div class="role">Estagiário de Direito</div>
@@ -461,8 +508,9 @@
         </div>
       </div>
       <div class="office-map">
+        <!-- O mapa grava cookies do Google; por isso só carrega após o aceite (ver script abaixo) -->
         <iframe
-          src="https://maps.google.com/maps?q=Rua+Victor+Mueller%2C+215%2C+Costa+e+Silva%2C+Joinville+-+SC&t=m&z=16&output=embed&iwloc=near"
+          data-consent-src="https://maps.google.com/maps?q=Rua+Victor+Mueller%2C+215%2C+Costa+e+Silva%2C+Joinville+-+SC&t=m&z=16&output=embed&iwloc=near"
           width="100%" height="100%" style="border:0;" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Localização — Mábia Matos e Advogados Associados, Joinville/SC"
@@ -497,9 +545,9 @@
         <p>Escritório de advocacia criminal em Joinville/SC, com atuação técnica, discreta e comprometida em todo o território nacional.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/dramabiamatos/" aria-label="Instagram @dramabiamatos" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8h-2a2 2 0 00-2 2v2H9v3h2v7h3v-7h2.2l.8-3H14v-1.5c0-.5.3-1 1-1h1.3V8z"/></svg></a>
           <a href="https://wa.me/5547999436619" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.4-4.1A8 8 0 1112 20a8 8 0 01-4-1.1L4 20z"/></svg></a>
         </div>
+        <p class="follow">Siga nas redes: <a href="https://www.instagram.com/dramabiamatos/" target="_blank" rel="noopener">@dramabiamatos</a></p>
       </div>
       <div class="footer-col">
         <h4>Navegação</h4>
@@ -520,11 +568,24 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Mábia Matos e Advogados Associados — OAB/SC 72.937</span>
+      <span>© <span id="year"></span> Mábia Matos e Advogados Associados — OAB/SC 72.937 · CNPJ 57.469.433/0001-08</span>
+      <span>
+        <a href="politica-privacidade.html">Política de Privacidade</a> ·
+        <button type="button" class="footer-cookie-btn" id="cookiePrefsBtn">Preferências de cookies</button>
+      </span>
     </div>
     <p class="footer-disclaimer">Este site tem caráter meramente informativo, nos termos do Código de Ética e Disciplina da OAB e do Provimento nº 205/2021 do Conselho Federal da OAB. As informações aqui apresentadas não constituem consulta jurídica nem promessa de resultado.</p>
   </div>
 </footer>
+
+<!-- ===== BANNER DE COOKIES (LGPD) ===== -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+  <p>Usamos cookies de medição para entender como o site é utilizado e melhorar nossa comunicação. Você pode aceitar ou recusar. Saiba mais na nossa <a href="politica-privacidade.html">política de privacidade</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-ghost-dark" id="cookieReject">Recusar</button>
+    <button type="button" class="btn btn-primary" id="cookieAccept">Aceitar</button>
+  </div>
+</div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -551,6 +612,44 @@
     });
   }, { threshold:.15 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- Consentimento de cookies (Consent Mode v2) ---------- */
+  const CONSENT_KEY = 'mm_cookie_consent';
+  const banner = document.getElementById('cookieBanner');
+  const mapFrame = document.querySelector('iframe[data-consent-src]');
+
+  function readConsent(){
+    try { return localStorage.getItem(CONSENT_KEY); } catch(e){ return null; }
+  }
+  function saveConsent(value){
+    try { localStorage.setItem(CONSENT_KEY, value); } catch(e){}
+  }
+  function applyConsent(granted){
+    gtag('consent', 'update', {
+      analytics_storage: granted ? 'granted' : 'denied',
+      ad_storage: granted ? 'granted' : 'denied',
+      ad_user_data: granted ? 'granted' : 'denied',
+      ad_personalization: granted ? 'granted' : 'denied'
+    });
+    if (granted && mapFrame && !mapFrame.src) {
+      mapFrame.src = mapFrame.dataset.consentSrc;
+    }
+  }
+  function showBanner(){ banner.classList.add('is-visible'); }
+  function hideBanner(){ banner.classList.remove('is-visible'); }
+
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    saveConsent('granted'); applyConsent(true); hideBanner();
+  });
+  document.getElementById('cookieReject').addEventListener('click', () => {
+    saveConsent('denied'); applyConsent(false); hideBanner();
+  });
+  document.getElementById('cookiePrefsBtn').addEventListener('click', showBanner);
+
+  const saved = readConsent();
+  if (saved === 'granted') { applyConsent(true); }
+  else if (saved === 'denied') { applyConsent(false); }
+  else { showBanner(); }
 </script>
 
 </body>
